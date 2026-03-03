@@ -181,3 +181,36 @@ print(f"In 5 years: {age + 5}")  # Add 5 to age
 score = 85.5
 print(f"Score: {score:.0f}")  # Format to 0 decimals
 
+# ====== PART D: AI-Augmented Task ======
+"""
+Task: Generate a Python type conversion matrix using AI
+- Convert between: int, float, str, bool, list, tuple
+- Test edge cases
+"""
+
+def type_conversion_matrix():
+    """Demonstrate type conversions with examples and edge cases"""
+    examples = {
+        "int to float": float(10),
+        "int to str": str(10),
+        "int to bool": bool(0),  # False
+        "float to int": int(3.99),  # drops decimal
+        "float to str": str(3.5),
+        "float to bool": bool(0.0),  # False
+        "str to int": int("42"),
+        "str to float": float("3.14"),
+        "str to bool": bool("False"),  # True, non-empty string
+        "bool to int": int(True),
+        "bool to float": float(False),
+        "list to tuple": tuple([1,2,3]),
+        "tuple to list": list((4,5,6)),
+        "list to bool": bool([]),  # False
+        "tuple to bool": bool((7,8))  # True
+    }
+    print("\n=== Type Conversion Matrix ===")
+    for desc, result in examples.items():
+        print(f"{desc:15}: {result} | Type: {type(result).__name__} | Truthy: {bool(result)}")
+
+# Run Part D
+type_conversion_matrix()
+
