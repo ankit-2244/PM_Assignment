@@ -149,3 +149,35 @@ def type_conversion_matrix():
 # Add to main so it runs
 type_conversion_matrix()
 
+# ====== PART C: Interview Ready ======
+
+# Q2 — Type Analyzer Function
+def analyze_value(value):
+    """Return formatted string with value, type, truthiness, and length"""
+    try:
+        length = len(value)
+    except TypeError:
+        length = "N/A"
+    result = f"Value: {value} | Type: {type(value).__name__} | Truthy: {bool(value)} | Length: {length}"
+    return result
+
+# Example usage of analyzer
+print("\n=== Type Analyzer Examples ===")
+print(analyze_value(42))
+print(analyze_value(""))
+print(analyze_value([1,2,3]))
+
+# Q3 — Debugging
+name = input("\nEnter Name for Debug Test: ")
+age = int(input("Enter Age: "))  # Convert string input to int
+
+if age >= 18:
+    status = "Adult"
+else:
+    status = "Minor"
+
+print(f"{name} is {age} years old and is a {status}")
+print(f"In 5 years: {age + 5}")  # Add 5 to age
+score = 85.5
+print(f"Score: {score:.0f}")  # Format to 0 decimals
+
